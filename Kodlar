@@ -1,0 +1,31 @@
+int lm35 = A5;
+int okunanVoltaj;
+float sicaklik;
+#define led1 2
+#define led2 3
+ 
+void setup(){
+analogReference(INTERNAL);
+Serial.begin(9600);
+pinMode(led1, OUTPUT);
+pinMode(led2, OUTPUT);
+}
+ 
+void loop(){
+  okunanVoltaj = analogRead(lm35);
+  sicaklik = okunanVoltaj / 9.31; 
+  Serial.print("Sıcaklık: ");
+  Serial.println(sicaklik);
+  delay(1000);
+  
+  if(sicaklik>28)
+  {
+    digitalWrite(led1, HIGH);
+    digitalWrite(led2, LOW);
+  }
+  else
+  {
+    digitalWrite(led2, HIGH);
+    digitalWrite(led1, LOW);
+  }
+}
