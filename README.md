@@ -1,2 +1,2 @@
 # sicakliksensoru
-Arduino LM35 Sıcaklık Sensörü
+Arduino LM35 Ledli Sıcaklık Sensörü
